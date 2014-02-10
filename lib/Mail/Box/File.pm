@@ -610,7 +610,7 @@ sub _write_replace($)
            unless $size == $need;
 
         $new->print($whole);
-        $new->print("\n");
+        $new->print( $Mail::Message::crlf_platform ? "\r\n" : "\n" );
 
         $message->moveLocation($newbegin - $oldbegin);
         $kept++;
