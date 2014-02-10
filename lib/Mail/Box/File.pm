@@ -580,6 +580,8 @@ sub _write_replace($)
 
     my $new      = IO::File->new($tmpnew, 'w')   or return 0;
     my $old      = IO::File->new($filename, 'r') or return 0;
+    $new->binmode(':raw');
+    $old->binmode(':raw');
 
     my ($reprint, $kept) = (0,0);
 
