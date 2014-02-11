@@ -246,7 +246,7 @@ sub read($$;$@)
 
     open OUT, '>:raw', $file
         or die "Cannot write to $file: $!.\n";
-
+    local $parser->{MBPP_trusted} = 1;
     (my $begin, my $end, $self->{MMBF_nrlines}) = $parser->bodyAsFile(\*OUT,@_);
     close OUT;
 
