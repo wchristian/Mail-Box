@@ -54,7 +54,7 @@ sub init($)
 
     my @use
      = exists $args->{use} ? @{delete $args->{use}}
-     : $^O =~ m/mswin/i    ? qw/    POSIX Flock/
+     : $^O =~ m/mswin/i    ? qw/          Flock/
      :                       qw/NFS POSIX Flock/;
 
     my (@lockers, @used);
